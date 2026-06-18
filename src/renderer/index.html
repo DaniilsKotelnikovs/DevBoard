@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy"
+    content="
+      default-src 'self';
+      style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+      font-src https://fonts.gstatic.com;
+      script-src 'self';
+      connect-src 'none';
+      img-src 'none';
+    ">
+  <title>DevBoard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app">
+    <div id="titlebar">
+      <svg class="brand-logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="3" y="3" width="94" height="94" rx="22" fill="#202327" stroke="rgba(255,255,255,0.09)" stroke-width="1"/>
+        <circle cx="30" cy="34" r="4.6" class="logo-accent"/>
+        <rect x="42" y="31" width="30" height="6" rx="3" fill="#C7CCD2"/>
+        <circle cx="30" cy="50" r="4.6" fill="#7E858E"/>
+        <rect x="42" y="47" width="22" height="6" rx="3" fill="#878D95"/>
+        <circle cx="30" cy="66" r="4.6" fill="#5A6068"/>
+        <rect x="42" y="63" width="26" height="6" rx="3" fill="#676D75"/>
+      </svg>
+      <span class="brand-name">DevBoard</span>
+      <div class="titlebar-spacer"></div>
+      <button class="ctrl-btn" id="btn-refresh" title="Refresh" aria-label="Refresh">⟳</button>
+      <button class="ctrl-btn" id="btn-settings" title="Settings" aria-label="Settings">⚙</button>
+      <button class="ctrl-btn" id="btn-minimize" title="Minimize" aria-label="Minimize">–</button>
+      <button class="ctrl-btn ctrl-close" id="btn-close" title="Close" aria-label="Close">✕</button>
+    </div>
+
+    <main id="panels-container"></main>
+
+    <div id="settings-overlay" class="hidden" role="dialog" aria-label="Settings"></div>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

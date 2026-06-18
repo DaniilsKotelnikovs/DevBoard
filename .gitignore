@@ -1,0 +1,36 @@
+# Design files (local only)
+design/
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+out/
+
+# Electron-builder cache
+.cache/
+build/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local config / secrets (never commit)
+*.env
+.env*
+config.json
+
+# Debug dumps written during development
+*-debug.json
