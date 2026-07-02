@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "Transparent always-on-top desktop widget for GitLab MRs and Jira work",
   "main": "src/main/index.js",
+  "author": "Daniils Kotelnikovs",
   "scripts": {
     "start": "electron .",
-    "postinstall": "electron-rebuild -f -w keytar",
+    "postinstall": "electron-builder install-app-deps",
     "pack": "electron-builder --dir",
     "build": "electron-builder",
     "build:win": "electron-builder --win",
@@ -14,6 +15,7 @@
   "build": {
     "appId": "com.devboard.app",
     "productName": "DevBoard",
+    "icon": "assets/icon.ico",
     "asar": true,
     "directories": {
       "output": "dist"
@@ -29,7 +31,7 @@
       "target": [{ "target": "AppImage", "arch": ["x64"] }],
       "category": "Utility"
     },
-    "nativeRebuilder": "legacy"
+    "nodeGypRebuild": false
   },
   "dependencies": {
     "keytar": "^7.9.0"
